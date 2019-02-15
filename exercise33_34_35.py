@@ -55,3 +55,35 @@ if __name__ == "__main__":
     import json
     
     ask()
+
+##### practicepython.org: Exercise 35
+
+from collections import Counter
+
+with open("birthdays.json", "r") as f:
+        birthdays = json.load(f)
+
+dates = birthdays.values()
+
+splitted = []
+
+for i in dates:
+    splitted.append(i.split(","))
+
+new_split=[]
+
+for i in splitted:
+    
+    for j in i:
+        new_split.append(j.split())
+
+months = []
+
+for i in new_split:
+    
+    if i[0].isalpha():
+        months.append(i[0])
+
+c= Counter(months)
+
+c
